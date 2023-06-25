@@ -83,3 +83,14 @@ function timeConversion(s) {
 
 }
 
+let arr = [0,1,2,3,4,5,6]
+
+let middle = Math.floor(arr.length/2)
+
+console.log(middle)
+
+for(let i=0; i< arr.length; i++){
+    if(i === middle) {
+        console.log(arr[i])
+    }
+}
