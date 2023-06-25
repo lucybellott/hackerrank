@@ -96,3 +96,47 @@ for(let i=0; i< arr.length; i++){
         console.log(arr[i])
     }
 }
+
+//lonely integer
+function lonelyinteger(a) {
+    // Write your code here
+
+    //console.log(a)
+    
+   // destructure the first (and only) element, sort then reduce
+    const [lonely] = a.sort((a, b) => a - b).reduce((acc, curr) => {      
+        // here we'll start the reduce with an empty array and check
+        // if the current integer is already on the array
+        if(!acc.includes(curr)) {
+            // if not, we'll add it
+            acc.push(curr)
+        } else {
+            // if so, we'll remove the last element.
+            // This way we'll be removing all duplicates
+            acc.pop()
+        }
+
+        // return the array to the next iteration
+        return acc
+    }, [])
+
+    return lonely
+}
+
+//option 2
+function lonelyinteger(a) {
+    // Write your code here
+
+    for (let i = 0; i < a.length; i++) {
+            const count = a.filter((item) => item === a[i]).length;
+            if (count === 1) {
+                console.log(a[i]);
+                return a[i];
+            }
+        }
+
+}
+
+
+
+
