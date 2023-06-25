@@ -83,6 +83,8 @@ function timeConversion(s) {
 
 }
 
+//find the median
+
 let arr = [0,1,2,3,4,5,6]
 
 let middle = Math.floor(arr.length/2)
