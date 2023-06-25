@@ -135,7 +135,42 @@ function lonelyinteger(a) {
             }
         }
 
+
 }
+
+//find the closest 
+
+let array2 = [200,300,2,4,900,1]
+
+let goal = 8
+
+const distance = array2.reduce((a,b) => Math.abs(a - goal) < Math.abs(b - goal) ? a : b)
+console.log(distance)
+
+//option 2
+function findClosest(numbers, target) {
+
+    let closest = numbers[0]; 
+    // Assume the first number is the closest
+    let closestDiff = Math.abs(target - closest); 
+    
+    // Calculate the difference between the target and closest
+    for (let i = 1; i < numbers.length; i++) {
+       let current = numbers[i];
+       let currentDiff = Math.abs(target - current); 
+       
+       // Calculate the difference between the target and current number
+       if (currentDiff < closestDiff) {
+          closest = current; 
+          
+          // Update the closest number
+          closestDiff = currentDiff; 
+          
+          // Update the closest difference
+       }
+    }
+    return closest;
+ }
 
 
 
