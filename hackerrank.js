@@ -172,6 +172,50 @@ function findClosest(numbers, target) {
     return closest;
  }
 
+ //missing number in a sequence
+
+ var missingNumber = function(nums) {
+    
+    
+    nums.sort((a,b)=> a-b)
+    //console.log(nums)
+    let missing
+    
+    for(let i= 0; i < nums.length -1; i++) {
+        let curr = nums[i]
+        let next = nums[i+1]
+        if(curr + 1 !== next){
+            missing = curr + 1
+        }
+        
+        
+    }
+    return missing
+};
 
 
+//add digitis till single digit
+//ex:n = 38, 3+8 =11, 1+1 = 2
+
+var addDigits = function(num) {
+   
+
+    if (num < 10) {
+        return num;
+      } else {
+       let num2 = [...num.toString()].reduce((a, c) => a + Number(c), 0);
+        return addDigits(num2);
+      }
+              
+            
+        
+    };
+
+    //reduce test
+    let arr3 = [90,6,34]
+
+    let redTest = arr3.reduce((acc,curr)=> {
+      return acc/curr
+    })
+console.log(redTest)
 
