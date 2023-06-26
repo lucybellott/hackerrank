@@ -89,11 +89,11 @@ let arr = [0,1,2,3,4,5,6]
 
 let middle = Math.floor(arr.length/2)
 
-console.log(middle)
+//console.log(middle)
 
 for(let i=0; i< arr.length; i++){
     if(i === middle) {
-        console.log(arr[i])
+        //console.log(arr[i])
     }
 }
 
@@ -145,7 +145,7 @@ let array2 = [200,300,2,4,900,1]
 let goal = 8
 
 const distance = array2.reduce((a,b) => Math.abs(a - goal) < Math.abs(b - goal) ? a : b)
-console.log(distance)
+//console.log(distance)
 
 //option 2
 function findClosest(numbers, target) {
@@ -274,5 +274,51 @@ var findKthLargest = function(nums, k) {
       
   };
 
+//TWO SUM
+let arr5 =[2,7,11,15]
+let target = 9
 
+for(i=0 ; i < arr5.length; i++) {
+    for (let j = i + 1; j < arr5.length; j++) {
+     if(arr5[i] + arr5[j] === target) {
+       // console.log(i,j)
+        
+    }
+    }
+ }
+///////////
+
+let words =["doll", "house", "map"]
+ for(i=0 ; i < words.length; i++) {
+    console.log("i",words[i])
+    for (let j = 0 ; j < words.length; j++) {
+     console.log("j",words[j])
+    }
+ }
+
+ //Longest Consecutive Sequence
+//Given an unsorted array of integers nums, return the length of the longest consecutive elements sequence.
+
+var longestConsecutive = function(nums) {
+    nums.sort((a,b)=>a-b)
+
+    let count =0
+    let i
+  
+
+    for(i=0; i<nums.length; i++){
+        let next = nums[i+1]
+
+        if(next - nums[i] === 1){
+            count++
+            
+        }
+        
+    }
+    let len = count +1
+    return len
+
+
+
+};
 
