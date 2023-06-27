@@ -322,3 +322,32 @@ var longestConsecutive = function(nums) {
 
 };
 
+//option 2
+
+var longestConsecutive = function(nums) {
+    if(nums.length < 1) return 0
+
+    let max = 1
+    let count = 1
+    const sorted = nums.sort((a, b) => a - b);
+    
+    for(let i = 0; i < sorted.length; i++){
+
+        // if we see a duplicate in array go to last entry in sequence 
+        // with same values
+        if(sorted[i] === sorted[i + 1]) continue
+
+        // if next entry in array is consecutive, add to count 
+        if(sorted[i] === sorted[i + 1] - 1 ){
+            count++
+            max = Math.max(count, max) 
+        } 
+        // if next entry in array is not consectutive, reset count
+        else {
+            count = 1
+        }
+    }
+
+   // return max
+};
+
