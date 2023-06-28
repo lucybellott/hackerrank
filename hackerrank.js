@@ -288,13 +288,13 @@ for(i=0 ; i < arr5.length; i++) {
  }
 ///////////
 
-let words =["doll", "house", "map"]
- for(i=0 ; i < words.length; i++) {
-    console.log("i",words[i])
-    for (let j = 0 ; j < words.length; j++) {
-     console.log("j",words[j])
-    }
- }
+//let words =["doll", "house", "map"]
+//  for(i=0 ; i < words.length; i++) {
+//     console.log("i",words[i])
+//     for (let j = 0 ; j < words.length; j++) {
+//      console.log("j",words[j])
+//     }
+//  }
 
  //Longest Consecutive Sequence
 //Given an unsorted array of integers nums, return the length of the longest consecutive elements sequence.
@@ -316,7 +316,7 @@ var longestConsecutive = function(nums) {
         
     }
     let len = count +1
-    return len
+    //return len
 
 
 
@@ -350,4 +350,37 @@ var longestConsecutive = function(nums) {
 
    // return max
 };
+
+let words =["doll", "house", "map", "map"]
+
+function countFrequencies(words) {
+
+    
+    words.sort()
+
+    let frequencyMap ={}
+
+    for(word of words) {
+        if(frequencyMap[word]){
+           frequencyMap[word]++
+        }
+        else {
+            frequencyMap[word] = 1 
+        }
+    }
+
+    let sortedFrequencies = Object.values(frequencyMap)
+     return sortedFrequencies
+    
+
+}
+
+//console.log(countFrequencies(words))
+
+//FILTERING DUPLICATES
+
+function filterDuplicates(data) {
+
+    return Array.from(new Set(data))
+}
 
