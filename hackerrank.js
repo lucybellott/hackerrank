@@ -463,5 +463,11 @@ for(key in ageHashmap){
 //Output: "dab"
 
 var removeOccurrences = function(s, part) {
+    //checking if the 'part' is still there
+    while(s.indexOf(part)!=-1){
+        //if it is there, then replacing it with ""
+                s=s.replace(part,"");
+            }
+            return s;
     
 };
