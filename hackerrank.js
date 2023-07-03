@@ -363,15 +363,18 @@ function countFrequencies(words) {
     for(word of words) {
         if(frequencyMap[word]){
            frequencyMap[word]++
+           
         }
         else {
             frequencyMap[word] = 1 
         }
+        
     }
-
-    let sortedFrequencies = Object.values(frequencyMap)
-     return sortedFrequencies
     
+    
+    let sortedFrequencies = Object.values(frequencyMap)
+    return sortedFrequencies
+   // return frequencyMap
 
 }
 
@@ -384,3 +387,81 @@ function filterDuplicates(data) {
     return Array.from(new Set(data))
 }
 
+let somearray = ["men", 1, "lucy","dog", "dog", "men", "lucy"]
+let someobj ={
+    firstName: 'Lucy',
+    lastName: 'Bellott',
+    age: 35
+}
+
+for(k in someobj){
+   console.log(someobj[k])
+}
+
+let mySet = new Set(somearray)
+
+console.log(mySet)
+
+let str = 'something'
+
+console.log(str.indexOf('me'))
+
+for(let item of somearray){
+    console.log(item)
+}
+
+
+//////////////////////////////////////////
+
+// let input = 'cabbaabcca'
+// function removeChars(input) {
+//     // your code here
+//   let indB = input.indexOf('b')
+//   let indAc= input.indexOf('ac')
+  
+//   if(input[indB] !== -1){
+//     indB = ""
+//   }
+//   if(input[indAc] !== -1){
+//     indAc = ""
+//   }
+//   return(input)
+  
+//   }
+//   console.log(removeChars(input))
+
+
+////////////////////////////////////////////
+
+//HASHMAP
+
+let ageHashmap = {}
+
+ageHashmap['Ana']= 23
+ageHashmap['John'] =11
+ageHashmap['Kurt'] = 45
+
+console.log(ageHashmap)
+
+
+
+for(key in ageHashmap){
+    
+    if(ageHashmap[key] === 23)
+    console.log(key)
+}
+
+////////////////////////////////////////////
+
+//REMOVE ALL OCCURRENCES OF A SUBSTRING
+
+//Given two strings s and part, perform the following operation on s until all occurrences of the substring part are removed:
+
+//Find the leftmost occurrence of the substring part and remove it from s.
+
+//Input: s = "daabcbaabcbc", part = "abc"
+//Output: "dab"
+
+var removeOccurrences = function(s, part) {
+    
+};
