@@ -468,6 +468,19 @@ var removeOccurrences = function(s, part) {
         //if it is there, then replacing it with ""
                 s=s.replace(part,"");
             }
-            return s;
+            
+            //return s;
     
 };
+
+//  OR
+
+while (s.indexOf(part) !== -1) {
+    const index = s.indexOf(part);
+    //1st slice: from beginning until the index where part begins
+    //2nd slice: end of part until the end of s
+    s = s.slice(0, index) + s.slice(index + part.length, s.length);
+  }
+
+
+
