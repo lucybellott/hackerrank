@@ -526,6 +526,28 @@ function diagonalDifference(arr) {
   return Math.abs(d1 - d2);
 }
 
+// VALID PALIDROME
+
+function isPalindrome(s) {
+    s = s.replace(/[^a-z0-9]/gi,'')
+    .toLowerCase()
+    .split('')
+    for(let i = 0, j = s.length - 1; i <= j; i++, j--){
+        if(s[i] !== s[j]) return false;
+        } 
+         return true;
+    }
+
+    //or
+
+    for (let i = 0; i < Math.floor(s.length / 2); i++) {
+        if (s[i] !== s[s.length - 1 - i]) {
+          return false; // Characters don't match, not a palindrome
+        }
+      }
+    
+      return true; // All characters match, it is a palindrome
+    /////////////////////////////
 
 
 
