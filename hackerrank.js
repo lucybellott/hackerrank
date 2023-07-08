@@ -532,6 +532,12 @@ function isPalindrome(s) {
     s = s.replace(/[^a-z0-9]/gi,'')
     .toLowerCase()
     .split('')
+
+    //or
+    let filtered = s.split("").filter((item) => item.toLowerCase() != item.toUpperCase())
+   
+    let str= filtered.join("").toLowerCase()
+
     for(let i = 0, j = s.length - 1; i <= j; i++, j--){
         if(s[i] !== s[j]) return false;
         } 
@@ -547,7 +553,28 @@ function isPalindrome(s) {
       }
     
       return true; // All characters match, it is a palindrome
-    /////////////////////////////
+    
+    //or to INCLUDE NUMBERS
+
+    let filtered = '';
+  for (let i = 0; i < s.length; i++) {
+    const char = s[i].toLowerCase();
+    if ((char >= 'a' && char <= 'z') || (char >= '0' && char <= '9')) {
+      filtered += char;
+    }
+  }
+
+  for (let i = 0; i <= Math.floor(filtered.length / 2); i++) {
+    if (filtered[i] !== filtered[filtered.length - 1 - i]) {
+      return false; // Characters don't match, not a palindrome
+    }
+  }
+
+  return true;
+    
+    
+    
+      /////////////////////////////
 
 
 
