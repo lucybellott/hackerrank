@@ -644,3 +644,46 @@ var search = function(nums, target) {
 };
 
 
+///////////////////////////
+
+//LONGEST COMMON PREFIX
+
+var longestCommonPrefix = function(strs) {
+
+if (strs.length === 0) {
+    return "";
+  }
+
+  let prefix = strs[0]; // Initialize prefix with the first string
+
+  for (let i = 1; i < strs.length; i++) {
+    while (strs[i].indexOf(prefix) !== 0) {
+      prefix = prefix.slice(0, prefix.length - 1); // Remove the last character
+      if (prefix === "") {
+        return ""; // If prefix becomes empty, there is no common prefix
+      }
+    }
+  }
+
+  return prefix;
+
+  //or
+
+
+  // Return early on empty input
+//   if (!strs.length) return '';
+
+//   // Loop through the letters of the first word
+//   for (let i = 0; i <= strs[0].length; i++) {
+//       // Check if this character is present in the same position of every string
+//       if (!strs.every((string) => string[i] === strs[0][i])) {
+//           // If not, return the string up to and including the previous character
+//           return strs[0].slice(0, i);
+//       }
+//   }
+
+//   return strs[0];
+}
+
+
+
