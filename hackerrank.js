@@ -686,4 +686,38 @@ if (strs.length === 0) {
 }
 
 
+////////////////////////////////////////////////////////////////
+
+//VALIDATE BRACKETS
+
+function isValid(s) {
+    const stack = [];
+  
+    for (let i = 0; i < s.length; i++) {
+      const char = s[i];
+  
+      if (char === '(' || char === '{' || char === '[') {
+        stack.push(char); // Push opening brackets onto the stack
+      } else {
+        // Check if the stack is empty or the current closing bracket doesn't match the top opening bracket
+        if (
+          stack.length === 0 ||
+          (char === ')' && stack[stack.length - 1] !== '(') ||
+          (char === '}' && stack[stack.length - 1] !== '{') ||
+          (char === ']' && stack[stack.length - 1] !== '[')
+        ) {
+          return false; // Invalid string
+        }
+  
+        stack.pop(); // Matched opening and closing brackets, remove the opening bracket from the stack
+      }
+    }
+  
+    return stack.length === 0; // If the stack is empty, all opening brackets have been closed correctly
+  }
+  
+
+  
+
+
 
