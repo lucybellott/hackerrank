@@ -716,6 +716,42 @@ function isValid(s) {
     return stack.length === 0; // If the stack is empty, all opening brackets have been closed correctly
   }
   
+  //or
+
+  function isValid2(s) {
+    const stack = [];
+    const brackets = {
+      '(': ')',
+      '{': '}',
+      '[': ']',
+    };
+  
+    for (let i = 0; i < s.length; i++) {
+      const char = s[i];
+  
+      if (char === '(' || char === '{' || char === '[') {
+        stack.push(char);
+      } else {
+        const lastOpeningBracket = stack.pop();
+        if (brackets[lastOpeningBracket] !== char) {
+          return false;
+        }
+      }
+    }
+  
+    return stack.length === 0;
+  }
+
+  ///////////////////////////
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
   
 
