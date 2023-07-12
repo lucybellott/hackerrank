@@ -794,6 +794,64 @@ function isValid(s) {
        
    
    };
+
+   ////////////////////////////////////////////////////////////////////////////
+
+   //An activity at our university requires students to work in pairs. Given a list of student ID number, course name pairs, write a function that returns a collection of all possible pairs of student ID numbers.
+
+  
+    
+//    let enroll = [
+//         ["58", "Linear Algebra"],
+//         ["94", "Art History"],
+//         ["94", "Operating Systems"],
+//         ["17", "Software Design"],
+//         ["58", "Mechanics"],
+//         ["58", "Economics"],
+//         ["17", "Linear Algebra"],
+//         ["17", "Political Science"],
+//         ["94", "Economics"],
+//         ["25", "Economics"],
+//         ["58", "Software Design"],
+//         ]
+
+function findPairs(enroll) {
+    let onlyNums = [];
+    let onlyPairs = [];
+  
+    for (let i = 0; i < enroll.length; i++) {
+      onlyNums.push(enroll[i].shift());
+    }
+  
+    let unique = [...new Set(onlyNums)];
+  
+    for (let i = 0; i < unique.length; i++) {
+      for (let j = i + 1; j < unique.length; j++) {
+        onlyPairs.push(unique[i] + "," + unique[j]);
+      }
+    }
+  
+    return onlyPairs;
+  }
+
+        
+
+
+
+   
+
+   //console.log(findPairs())
+
+   //expected output
+//    Expected output: [
+//     "58,17",
+//     "58,94",
+//     "58,25",
+//     "94,25",
+//     "17,94",
+//     "17,25"
+//     ]
+    
   
   
   
