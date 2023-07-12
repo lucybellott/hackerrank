@@ -822,6 +822,7 @@ function findPairs(enroll) {
     for (let i = 0; i < enroll.length; i++) {
       onlyNums.push(enroll[i].shift());
     }
+    //console.log(onlyNums)
   
     let unique = [...new Set(onlyNums)];
   
@@ -851,6 +852,33 @@ function findPairs(enroll) {
 //     "17,94",
 //     "17,25"
 //     ]
+
+
+////////////////////////////////////////////////////////////////
+
+//ROMAN TO INTERGER
+
+function RomantoInt(s) {
+
+    let result =0
+    let romanObj = {M:1000,D:500,C:100,L:50,X:10,V:5,I:1}
+
+    for(let i=0; i<s.length; i++){
+        if(romanObj[s[i]]<romanObj[s[i+1]]){
+            result = result - romanObj[s[i]]
+        }
+        else{
+            result+=romanObj[s[i]]
+        }
+    }
+    return result
+
+}
+
+/////////////////////////////////////
+
+
+
     
   
   
