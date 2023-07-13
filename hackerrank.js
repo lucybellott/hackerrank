@@ -878,7 +878,28 @@ function RomantoInt(s) {
 /////////////////////////////////////
 
 
+//MERGE STRINGS ALTERNATELY
 
+var mergeAlternately = function(word1, word2) {
+    //word1="abc", word2="pqr"
+
+   let newWordArr =[]
+   let maxLength = Math.max(word1.length, word2.length)
+    
+
+    for(let i=0; i< maxLength; i++){
+        newWordArr.push(word1[i])
+    
+        newWordArr.push(word2[i])
+        
+         //console.log ["a","p","b","q","c","r"]
+          
+    }
+    let result = newWordArr.join("")
+
+    return result
+
+};
     
   
   
