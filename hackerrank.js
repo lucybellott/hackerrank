@@ -910,6 +910,28 @@ var mergeAlternately = function(word1, word2) {
         }
         return nums.length;
     };
+
+    // KIDS WITH the Greatest Number of Candies
+    var kidsWithCandies = function(candies, extraCandies) {
+        let highest= candies[0];
+        let array = []
+        for(let i=1;i<candies.length;i++){
+            if(highest < candies[i]){
+                highest = candies[i]
+            }
+        }
+    
+        for(let i=0;i<candies.length;i++){
+            if(candies[i]+extraCandies >= highest){
+                array.push(true);
+            }else{
+                array.push(false)
+            }
+        }
+    
+        return array
+    };
+
   
   
   
