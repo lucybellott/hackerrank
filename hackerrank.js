@@ -980,12 +980,28 @@ var mergeAlternately = function(word1, word2) {
         let keysSorted = Object.keys(freqObj).sort((a,b)=>freqObj[b]-freqObj[a])
         
     
-        
         return keysSorted[0]
     
-    
-    
-    };
+     };
+
+     //or
+
+     var majorityElement2 = function(nums) {
+            let n= nums.length/2;
+        let obj={};
+        for(let i=0;i<nums.length;i++){
+            if(obj[nums[i]]==undefined){
+                obj[nums[i]]=1;
+            }else{
+                obj[nums[i]]++
+            }
+        }
+        for(let i in obj){
+            if(obj[i]>n){
+                return i
+            }
+        }
+        };
 
   
   
