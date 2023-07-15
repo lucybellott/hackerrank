@@ -959,6 +959,34 @@ var mergeAlternately = function(word1, word2) {
         
     };
 
+    ////////////////////////////////////////
+
+    //MAJORITY ELEMENT(THE ONE THAT APPERS THE MOST OFTEN IN THE ARRAY)
+
+    var majorityElement = function(nums) {
+
+        let freqObj = {}
+    
+        for(i=0; i< nums.length; i++){
+            //assigning the value to 1 if not present in the obj
+            if(!freqObj[nums[i]]){
+                freqObj[nums[i]] = 1
+            }
+            else{
+                freqObj[nums[i]]++
+            }
+        }
+    
+        let keysSorted = Object.keys(freqObj).sort((a,b)=>freqObj[b]-freqObj[a])
+        
+    
+        
+        return keysSorted[0]
+    
+    
+    
+    };
+
   
   
   
