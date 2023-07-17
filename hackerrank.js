@@ -1135,12 +1135,16 @@ function findCommonDivisor(str1, str2) {
 // can be planted in the flowerbed without violating the no-adjacent-flowers rule and false otherwise.
 
 var canPlaceFlowers = function(flowerbed, n) {
-    //[1,0,0,0,1]
+    
     let freeSpaces=[]
 
-    for(i=1;i<flowerbed.length-1; i++){
-      if(flowerbed[i+1]===0 && flowerbed[i-1]===0){
+    for(i=0;i<flowerbed.length; i++){
+      if (flowerbed[i] === 0) {
+      if ((i === 0 || flowerbed[i - 1] === 0) && (i === flowerbed.length - 1 || flowerbed[i + 1] === 0)) {
         freeSpaces.push(i)
+         flowerbed[i] = 1
+       
+      }
       }
     }
     //console.log(freeSpaces)
