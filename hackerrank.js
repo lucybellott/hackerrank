@@ -1037,6 +1037,55 @@ return counter
 
 };
 
+////////////////////////////////////////////////////////////////
+
+//FIND THE GREATEST COMMON DIVISOR OF STRINGS
+
+// For two strings s and t, we say "t divides s" if and only if s = t + ... + t (i.e., t is concatenated with itself one or more times).
+
+// Given two strings str1 and str2, return the largest string x such that x divides both str1 and str2.
+
+//find the length of the greatest common divisor and that will be the length of the string you need to return.
+//if it matches on both strings then you have a string of common divisor otherwise just return an empty string
+
+function findCommonDivisor(str1, str2) {
+    // Step 1: Calculate the lengths of str1 and str2
+    const len1 = str1.length;
+    const len2 = str2.length;
+
+    // Helper function to find the Greatest Common Divisor (GCD) using Euclidean algorithm
+  function gcd(a, b) {
+    while (b !== 0) {
+      const remainder = a % b;
+      a = b;
+      b = remainder;
+    }
+    return a;
+  }
+  
+    // Step 2: Find the GCD using the Euclidean algorithm
+    const gcdVal = gcd(len1, len2);
+  
+    // Step 3: Extract substring of length gcdVal from str1 and str2 using slice
+    const substring1 = str1.slice(0, gcdVal);
+    const substring2 = str2.slice(0, gcdVal);
+  
+    // Step 4: Check if the substrings are the same to find the common divisor
+    if (substring1 === substring2) {
+      return substring1; // Common divisor found
+    } else {
+      return ""; // No common divisor found
+    }
+  }
+  
+  
+  
+  // Test cases
+ // console.log(findCommonDivisor("abcabcdef", "abcabc")); // Output: "abc"
+ // console.log(findCommonDivisor("orangeapplebanana", "apple")); // Output: ""
+ // console.log(findCommonDivisor("hello", "hellohellohello")); // Output: "hello"
+  //console.log(findCommonDivisor("abcdabcd", "abcdabcdabcdabcdabcd")); // Output: "abcd"
+  //console.log(findCommonDivisor("abababab", "abab")); // Output: "ab"
   
   
   
