@@ -1106,6 +1106,30 @@ function findCommonDivisor(str1, str2) {
    
    
  };
+
+ ///////////////////////////////////
+
+ //KIDS WITH CANDIES
+
+ var kidsWithCandies2 = function(candies, extraCandies) {
+    
+    let result = []
+    let maxCandies = Math.max(...candies)
+   
+   for(i=0; i< candies.length; i++){
+       if(candies[i] + extraCandies >= maxCandies){
+           result.push(true)
+       }
+       else{
+           result.push(false)
+       }
+   }
+   return result
+};
+///////////////////////////////////
+
+
+
   
   
   
