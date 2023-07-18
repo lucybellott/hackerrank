@@ -1269,3 +1269,24 @@ var strStr = function(haystack, needle) {
     return matches
 
  }
+
+ //////////////////////
+ //matching values different index
+
+ 
+
+ function sameVdifI(str1,str2){
+
+
+    let res =[]
+
+    for(let i=0; i<str1.length; i++){
+        for(let j=0; j<str2.length; j++){
+            if(str1[i]===str2[j] && i!== j){
+                res.push(str1[i])
+            }
+        }
+    }
+    return res
+
+ }
