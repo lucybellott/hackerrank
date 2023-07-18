@@ -1159,6 +1159,85 @@ var canPlaceFlowers = function(flowerbed, n) {
 
 ////////////////////////////////////////////////////////////////
 
+//REVERSE VOWELS IN THE ARRAY
+var reverseVowels = function(s) {
+    let vowels = ['a', 'e', 'i', 'o', 'u','A', 'E', 'I', 'O', 'U'];
+    let wordV = [];
+    let vowelIndices = []; 
+    let string = [...s]
+  
+    for (let i = 0; i < string.length; i++) {
+      if (vowels.includes(string[i])) {
+        vowelIndices.push(i);
+        wordV.push(string[i]);
+      }
+    }
+  
+    // Reverse the array containing the vowels
+    wordV.reverse();
+  
+    // Convert the input string to an array of characters
+    let strArray = s.split("");
+  
+    // Place reversed vowels back into the original string
+    for (let j = 0; j < vowelIndices.length; j++) {
+      strArray[vowelIndices[j]] = wordV[j];
+    }
+  
+    // Join the array back into a string and return
+    return strArray.join("");
+     
+  };
+
+////////////////////////////////////////////////////////////////
+
+//FIND THE INDEX OF THE FIRST OCCURENCE IN A STRING
+var strStr = function(haystack, needle) {
+  
+    return haystack.indexOf(needle);
+  
+  };
+  /////////////////////////////////
+
+  //FIRST UNIQUE STRING
+  var firstUniqChar = function(s) {
+    // console.log(s)
+    let obj={}
+     
+     for(i=0; i<s.length; i++){
+         if(obj[s[i]]){
+             obj[s[i]]++
+         }
+         else{
+             obj[s[i]] =1
+         }
+     }
+     
+     for (let i = 0; i < s.length; i++) {
+     if (obj[s[i]] === 1) {
+       return i;
+     }
+   }
+ 
+   return -1
+ 
+ };
+
+ //or
+ var firstUniqChar2 = function(s) {
+    for (let idx = 0; idx < s.length; idx++){
+        // If same...
+        if(s.indexOf(s[idx]) === s.lastIndexOf(s[idx])){
+            // return the index of that unique character
+            return idx
+        } else {
+            return -1       // If no character appeared exactly once...
+        }
+    }
+};
+ ////////////////////////////////
+
+
 
 
   
