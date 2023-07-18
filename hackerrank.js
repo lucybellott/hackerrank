@@ -1199,6 +1199,8 @@ var strStr = function(haystack, needle) {
   };
   /////////////////////////////////
 
+  
+  
   //FIRST UNIQUE STRING
   var firstUniqChar = function(s) {
     // console.log(s)
@@ -1236,18 +1238,34 @@ var strStr = function(haystack, needle) {
     }
 };
  ////////////////////////////////
+ 
+ function findMatchingIndices(str1, str2) {
+    const minLength = Math.min(str1.length, str2.length)
+
+    let matchArray = []
+
+    for(let i=0; i<minLength; i++){
+        if(str1[i] === str2[i]){
+            matchArray.push(i)
+        }
+    }
+    return matchArray
 
 
+ }
 
+ //or (brute force)
 
-  
-  
-  
-  
-  
-  
+ function findMatchingIndices2(str1,str2) {
 
-  
+    let matches = []
+    for(let i=0; i< str1.length; i++){
+        for(let j=0; j<str2.length; j++){
+            if(str1[i]===str2[j]){
+                matches.push(i)
+            }
+        }
+    }
+    return matches
 
-
-
+ }
