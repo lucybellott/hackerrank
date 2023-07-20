@@ -1301,3 +1301,18 @@ var strStr = function(haystack, needle) {
         if (str[i] != "" && str[i] != " ") s += str[i] + " "
     return s.trim()
 };
+//OR
+
+var reverseWords = function(s) {    
+    let reverse = '';
+    let words = s.split(' ');
+    
+    for( let i = words.length-1; i >= 0; i-- ) {
+         if( words[i] == '' ) {
+             continue;
+         } 
+         reverse += words[i] + ' ';               
+    }
+    
+    return reverse.trim();
+};
