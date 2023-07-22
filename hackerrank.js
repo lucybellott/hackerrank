@@ -1303,7 +1303,7 @@ var strStr = function(haystack, needle) {
 };
 //OR
 
-var reverseWords = function(s) {    
+var reverseWords2 = function(s) {    
     let reverse = '';
     let words = s.split(' ');
     
@@ -1315,4 +1315,29 @@ var reverseWords = function(s) {
     }
     
     return reverse.trim();
+};
+//OR
+var reverseWords3 = function(s) {
+    s = s.trim();
+    let stack = []; 
+    let temp ='';
+    for(let i=0;i<s.length;i++){
+        if(s[i]!=' ')
+        {    temp +=s[i];
+        }
+        else if(s[i]==' ' && temp!=''){
+            stack.push(temp);
+            temp='';
+        }
+    }
+    stack.push(temp);
+    temp='';
+    for(let i=stack.length-1;i>=0;i--){
+        if(i>0)
+            temp +=stack[i]+' '
+        else
+            temp +=stack[i];
+    }
+    return temp
+
 };
