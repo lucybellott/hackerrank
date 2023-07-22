@@ -1392,3 +1392,28 @@ var isSubsequence = function(s, t) {
     }
 
 };
+
+//PRODUCT OF ARRAY EXECPT SELF
+
+var productExceptSelf = function (nums) {
+    let product = 1;
+    let zeroCount = 0;
+    for (let num of nums) {
+        num === 0 ? zeroCount++ : product *= num
+        if (zeroCount > 1) {
+            return new Array(nums.length).fill(0)
+        }
+    }
+
+    for (let i in nums) {
+        if (!zeroCount) {
+            nums[i] = product / nums[i]
+        }
+        else if (nums[i] !== 0 ) {
+            nums[i] = 0
+        } else{
+            nums[i] = product
+        }
+    }
+    return nums
+};
