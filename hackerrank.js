@@ -1341,3 +1341,24 @@ var reverseWords3 = function(s) {
     return temp
 
 };
+
+//MOVE ZEROS
+var moveZeroes = function(nums) {
+   
+
+    let filtered = nums.filter((item)=> item !== 0)
+
+   let zLength = nums.length - filtered.length
+   let indexZero= nums.length - zLength
+  
+
+   
+    for(let i=0; i< nums.length; i++){
+        nums[i] = filtered[i]
+        nums.fill(0,indexZero)
+        
+     }
+
+    return nums
+    
+};
