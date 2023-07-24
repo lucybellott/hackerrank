@@ -1436,3 +1436,31 @@ var productExceptSelf2 = function (nums) {
   
     return res;
   };
+
+  //IS SUBSEQUENCE
+
+  var isSubsequence = function(s, t) {
+    if (s === "") {
+      return true; // If s is an empty string, it's always a subsequence of t
+    }
+  
+    let sIndex = 0; // Index for string s
+    let tIndex = 0; // Index for string t
+  
+    while (tIndex < t.length) {
+      if (s[sIndex] === t[tIndex]) {
+        sIndex++; // Increment sIndex when a match is found
+      }
+  
+      tIndex++; // Always increment tIndex
+  
+      if (sIndex === s.length) {
+        // If we have reached the end of s, it means s is a subsequence of t
+        return true;
+      }
+    }
+  
+    // If we haven't found all characters of s in t, it means s is not a subsequence of t
+    return false;
+  
+  }
