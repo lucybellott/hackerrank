@@ -1498,3 +1498,20 @@ var productExceptSelf2 = function (nums) {
         nums[start] + nums[end] > k ? end-- : start++;
     }
     return ans;;
+
+// Increasing Triplet Subsequence
+
+var increasingTriplet = function(nums) {
+    let first = Infinity
+    let second =Infinity
+    for(let j=0;j<nums.length;j++){
+        if(nums[j]<= first){
+            first =nums[j]
+        } else if (nums[j] <= second){
+            second =nums[j]
+        }else{
+            return true
+        }
+    }
+    return false
+};
