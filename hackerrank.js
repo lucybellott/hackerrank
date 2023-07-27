@@ -1499,6 +1499,32 @@ var productExceptSelf2 = function (nums) {
     }
     return ans;;
 
+
+var maxOperations2 = function(nums, k) {
+    const hashMap = new Map();
+    let operationsCount = 0;
+    
+    for(let i = 0; i < nums.length; i++) {
+        const diff = k - nums[i];
+        
+		// if the current difference is not found then set the value to map
+        if(!hashMap.has(diff)) {
+            hashMap.set(nums[i], (hashMap.get(nums[i]) || 0) + 1);
+            continue;
+        }
+		// In previous condition we checked that the hash presents
+		// reduce the occurrance by 1
+        hashMap.set(diff, hashMap.get(diff)-1);
+		// if the value is 0 of hash then delete it
+		// 0 means the hash has no more occurrances
+        if(!hashMap.get(diff)) hashMap.delete(diff);
+		// increase the operation count
+        operationsCount++;
+    }
+    return operationsCount;    
+};
+
+
 // Increasing Triplet Subsequence
 
 var increasingTriplet = function(nums) {
@@ -1515,3 +1541,6 @@ var increasingTriplet = function(nums) {
     }
     return false
 };
+
+//or
+
