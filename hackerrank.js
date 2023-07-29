@@ -1579,3 +1579,40 @@ var compress = function(chars) {
     }
     return i;
 };
+
+//OR
+var compress2 = function(chars) {
+    let len = 1;
+    let prev = chars[0];
+    let idx = 0;
+    for(let i=1; i<chars.length; i++) {
+        if(chars[i] === prev) {
+            len++;
+        } else {
+            chars[idx] = prev;
+            idx++;
+            if(len > 1) {
+                let s = ""+len;
+                s = s.split("");
+                for(let c of s) {
+                    chars[idx] = c;
+                    idx++;
+                }
+            }
+            prev = chars[i];
+            len = 1;
+        }
+    }
+    chars[idx] = prev;
+    idx++;
+    if(len > 1) {
+        let s = ""+len;
+        s = s.split("");
+        for(let c of s) {
+            chars[idx] = c;
+            idx++;
+        }
+    }
+
+    return idx;
+};
